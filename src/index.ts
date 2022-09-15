@@ -39,3 +39,16 @@ type Material = {
 const equipment: Equipment[] = botwEquipment;
 const monsters: Monster[] = botwMonsters;
 const materials: Material[] = botwData.data.materials;
+
+let location : any = {};
+
+const commonLocations: string[] = monsters.reduce((allLocations : string[], m : Monster) => [...allLocations, ...m.common_locations], [])
+commonLocations.reduce((locations: string[], l: string) => {
+    if (!locations.includes(l)) {
+        locations.push(l);
+    }
+    location = locations;
+    return locations;
+}, [])
+
+console.log(location);
