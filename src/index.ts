@@ -47,7 +47,8 @@ commonLocations.reduce((locations: string[], l: string) => {
     if (!locations.includes(l)) {
         locations.push(l);
     }
+    location = locations;
     return locations;
 }, [])
 
-console.log(commonLocations);
+console.log(location);
